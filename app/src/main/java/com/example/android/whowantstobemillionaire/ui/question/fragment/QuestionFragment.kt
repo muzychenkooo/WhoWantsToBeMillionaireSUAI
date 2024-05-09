@@ -120,22 +120,22 @@ class QuestionFragment :
         val dialog = AlertDialog.Builder(requireContext(), R.style.MyDialogTheme)
         dialog.apply {
 
-            val message = SpannableString("Do you really want to withdraw from the competition?")
+            val message = SpannableString("Вы точно хотите покинуть игру?")
             message.setSpan(
                 ForegroundColorSpan(Color.WHITE),
                 0,
                 message.length,
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
             )
-            val title = SpannableString("Exit")
+            val title = SpannableString("Выход")
             title.setSpan(
                 ForegroundColorSpan(Color.WHITE), 0, title.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
             )
             setTitle(title)
-            setMessage(message).setPositiveButton("yes") { _, _ ->
+            setMessage(message).setPositiveButton("Да") { _, _ ->
                 requireView().findNavController().popBackStack()
             }
-            setNegativeButton("No") { it, _ ->
+            setNegativeButton("Нет") { it, _ ->
                 it.cancel()
             }
         }
